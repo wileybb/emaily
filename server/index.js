@@ -1,7 +1,7 @@
 const express = require('express');
 require('./services/passport');
-
-
+const mongoose = require('mongoose')
+const keys = require('./config/keys')
 const app = express();
 
 //------------- Calling Required authRoutes Function Immediately ------------>>
@@ -13,4 +13,3 @@ mongoose.connect(keys.mongoURI);
 
 app.listen(PORT);
 
-//making a change for git
