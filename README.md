@@ -3,9 +3,13 @@ email/password googleOAuth user sign-in flow with remote user data storage.
 
 ## GoogleOAuth Flow
 
-user visits /auth/google
+Visit '/auth/google'
 
-Route handler redirects to a google account sign in. This will create a request to give the application access to the user's google account information. If the user accepts, google's API service will return an authentication token in the form of a token string. This token string is saved in cookies. This cookie will be recalled and sent to google's servers to verify whenever the application requests the user's google account information. This token will be saved until the user logs out. 
+Route handler redirects to a google account sign in. This will create a request to give the application access to the user's google account information. If the user accepts, google's API service will return an authentication token in the form of a token string. This token string along with the user's google profile id number is saved in the browser's memory in a cookie.
+This cookie will be recalled and sent to google's servers to verify whenever the application requests the user's google account information. This token will be saved until the user logs out. 
+
+Visit '/api/current_user' to display the google Id number of the profile that is currently logged in.
+Visit '/api/logout' to log the user out and delete the cookie from memory.
 
 ## MongoDB + Mongoose.js
 
