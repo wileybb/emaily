@@ -1,5 +1,5 @@
 # emaily
-email/password googleOAuth user sign-in flow with remote user data storage.
+A node/react web application. Has basic googleOAuth sign-in flow with remote user data storage using MongoDB Atlas.
 
 ## GoogleOAuth Flow
 
@@ -18,6 +18,17 @@ When the user signs in, their google account id is saved as an object to a colle
 ## Passport + Cookie-Session
 
 The passport node package is informed to use cookie-session node package in order to store the user's profile id of the user that is currently logged in to the application in the form of a browser cookie. This cookie remains in memory for 30 days or until the user signs out.
+
+## React
+
+This app has two servers: A client side server, which is the React server. This handles rendering JS to the front end. It also has a server side server, which is the Express server. This server passes JSON objects between the remote database and the app.
+This app has been configured so that you can easily start up both servers in development mode by running the command:
+  'npm run dev'
+ in the terminal while inside of the '/server' directory.
+ 
+ ## http-proxy-middleware
+ 
+ This node package (installed in the client server) helps by automatically configuring routes depending on whether the app is being run in development mode, or if the app is being used in production (deployed on heroku) mode.
 
 ## Heroku Deployment
 
