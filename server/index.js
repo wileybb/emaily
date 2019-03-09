@@ -21,7 +21,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-//------------- Calling exported authRoutes function immediately without saving it to a variable------------>>
+//------------- Importing and calling exported authRoutes function immediately without saving it to a variable------------>>
 require('./routes/authRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
